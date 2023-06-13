@@ -1,0 +1,15 @@
+{
+  "releasetypeutils.name": "ReleaseTypeUtils",
+  "releasetypeutils.release_type.alpha.code": "ALPHA",
+  "releasetypeutils.release_type.alpha.sentenced": "an alpha",
+  "releasetypeutils.release_type.alpha.normal": "alpha",
+  "releasetypeutils.release_type.beta.code": "BETA",
+  "releasetypeutils.release_type.beta.sentenced": "a beta",
+  "releasetypeutils.release_type.beta.normal": "beta",
+  "releasetypeutils.release_type.release_candidate.code": "RELEASE_CANDIDATE",
+  "releasetypeutils.release_type.release_candidate.sentenced": "a release candidate",
+  "releasetypeutils.release_type.release_candidate.normal": "rc",
+  "releasetypeutils.release_type.release.code": "RELEASE",
+  "releasetypeutils.release_type.release.sentenced": "a release",
+  "releasetypeutils.release_type.release.normal": "release"
+}
