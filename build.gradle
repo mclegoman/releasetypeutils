@@ -1,6 +1,7 @@
 plugins {
 	id "java"
 	id "application"
+	id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 repositories {
@@ -8,12 +9,14 @@ repositories {
 }
 
 dependencies {
-	include(implementation 'org.slf4j:slf4j-api:1.7.30')
-	include(implementation 'org.slf4j:slf4j-simple:1.7.30')
+	implementation 'org.slf4j:slf4j-api:1.7.30'
+	implementation 'org.slf4j:slf4j-simple:1.7.30'
 }
 
 application {
-	mainClass = "com.mclegoman.releasetypeutils.common.RTUMain"
+	application {
+		mainClassName = "com.mclegoman.releasetypeutils.common.RTUMain"
+	}
 }
 
 jar {
