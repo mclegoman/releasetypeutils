@@ -1,7 +1,8 @@
 package com.mclegoman.releasetypeutils.common;
 
-import com.mclegoman.releasetypeutils.common.data.RTUData;
-import com.mclegoman.releasetypeutils.common.data.RTULogType;
+import com.mclegoman.releasetypeutils.common.data.Data;
+import com.mclegoman.releasetypeutils.common.util.Translation;
+import com.mclegoman.releasetypeutils.common.version.Helper;
 
 public class RTUMain {
     public static void main(String[] args) {
@@ -9,19 +10,19 @@ public class RTUMain {
     }
     public static void init() {
         try {
-            RTUData.sendToLog(RTUData.setString("Initializing {}.", RTUData.ID), RTULogType.INFO);
+            Data.RTU_VERSION.sendToLog(Helper.LogType.INFO, Translation.setString("Initializing {}.", Data.RTU_VERSION.getID()));
             development();
         } catch (Exception error) {
-            RTUData.sendToLog(RTUData.setString("Failed to initialize {}: {}.", RTUData.ID, error), RTULogType.ERROR);
+            Data.RTU_VERSION.sendToLog(Helper.LogType.ERROR, Translation.setString("Failed to initialize {}: {}.", Data.RTU_VERSION.getID(), error));
         }
     }
     public static void development() {
         try {
-            if (RTUData.IS_DEVELOPMENT) {
-                RTUData.sendToLog(RTUData.setString("You are running a development build of {}. You may experience some unexpected bugs.", RTUData.NAME), RTULogType.INFO);
+            if (Data.RTU_VERSION.isDevelopmentBuild()) {
+                Data.RTU_VERSION.sendToLog(Helper.LogType.INFO, Translation.setString("You are running a development build of {}. You may experience some unexpected bugs.", Data.RTU_VERSION.getName()));
             }
         } catch (Exception error) {
-            RTUData.sendToLog(RTUData.setString("Failed to initialize {}>development: {}.", RTUData.ID, error), RTULogType.ERROR);
+            Data.RTU_VERSION.sendToLog(Helper.LogType.ERROR, Translation.setString("Failed to initialize {}>development: {}.", Data.RTU_VERSION.getID(), error));
         }
     }
 }
