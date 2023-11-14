@@ -52,7 +52,7 @@ public class Version implements Comparable<Version> {
 		return LoggerFactory.getLogger(getName());
 	}
 	public String getLoggerPrefix() {
-		return String.format("[%s %s]", getName(), getFriendlyString());
+		return String.format("[%s %s] ", getName(), getFriendlyString());
 	}
 	@Override
 	public int compareTo(Version other) {
