@@ -8,6 +8,12 @@
 package com.mclegoman.rtu.common.versioning;
 
 import com.mclegoman.rtu.common.util.LogType;
+
+// If you are using Fabric, uncomment the following imports
+//import net.fabricmc.loader.FabricLoader;
+//import net.fabricmc.loader.api.ModContainer;
+//import net.fabricmc.loader.api.metadata.ModMetadata;
+
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.ModMetadata;
 import org.quiltmc.loader.api.QuiltLoader;
@@ -53,6 +59,8 @@ public class Version implements Comparable<Version> {
 		return new Version(name, id, major, minor, patch, type, build, false, false, "");
 	}
 	public static Version parse(ModMetadata metadata) {
+		// If you are using Fabric, uncomment out the following line
+		//String version = metadata.getVersion().getFriendlyString();
 		String version = metadata.version().toString();
 		String[] versionData = version.split("-");
 		String[] versionVer = versionData[0].split("\\.");
@@ -69,7 +77,8 @@ public class Version implements Comparable<Version> {
 		return this.modrinthId;
 	}
 	public Optional<ModContainer> getModContainer() {
-		// Updated to use Quilt Loader instead of Fabric Loader.
+		// If you are using Fabric, uncomment out the following line.
+		//return FabricLoader.getInstance().getModContainer(getID());
 		return QuiltLoader.getModContainer(getID());
 	}
 	public String getName() {
